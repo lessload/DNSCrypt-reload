@@ -31,4 +31,4 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 - in some case dnscrypt-proxy can not download nscrypt-resolvers make it start service fail. ( please advice )
 
 ------------------------------------------
-Please advice me to make code more stable.
+***Please advice me to make code more stable.***
