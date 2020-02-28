@@ -6,7 +6,7 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 
 2. run lessload-installer.bat to install (it will install loopback to all interface & block all internet by default)
 
-3. one click Restart-dnscrypt.bat to access internet with dnscrypt, script will automatic detect internet and run dnscrypt-proxy.
+3. one click Reload-dnscrypt.bat to access internet with dnscrypt, script will automatic detect internet and run dnscrypt-proxy.
 
 (you can run script before or after connect wifi but Web Captive Portal will not show if you not run script after)
 
@@ -15,7 +15,7 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 
 
 ## Pro
-- one click base to run dnscrypt-proxy.
+- one click base to run dnscrypt-proxy by run "Reload-dnscrypt.bat"
 - support Web Captive Portal ('nslookup' & 'ping' not work like this script).
 - less resource usage.
 - less data leak (maybe)
@@ -28,7 +28,7 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 ## Bug
 - can not install loopback to interface that never use.
 - some anti-virus may block PowerShell to connect the internet. make it allow.
-- in some case dnscrypt-proxy can not download nscrypt-resolvers make it start service fail.
+- in some case dnscrypt-proxy can not download nscrypt-resolvers make it start service fail.(please advice)
 
 ------------------------------------------
 Please advice me to make code more stable.
