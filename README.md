@@ -2,7 +2,7 @@
 
 cmd script automatic detect internet and start. one click base to run dnscrypt-proxy.
 
-1. download dnscrypt-proxy-winXX-x.x.x.zip ( source: https://github.com/DNSCrypt/dnscrypt-proxy/releases/ ) and place winXX folder same as lessload-installer.bat
+1. download dnscrypt-proxy-winXX-x.x.x.zip ( [source](https://github.com/DNSCrypt/dnscrypt-proxy/releases/) ) and place winXX folder same as lessload-installer.bat
 
 2. run lessload-installer.bat to install ( it will install loopback to all interface & block all internet by default )
 
@@ -22,7 +22,7 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 - clean.
 
 ## Con
-- you need to config *.toml manual. Ref: ( https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Configuration )
+- you need to config *.toml manual. ( [From this manual](https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Configuration) )
 - Request PowerShell work on Windows 8 or above
 
 ## Bug
