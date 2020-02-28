@@ -19,7 +19,7 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 
 ## Con
 - you need to config *.toml manual. Ref: (https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Configuration)
-
+- Request PowerShell work on Windows 8 or above
 
 ## Bug
 - can not install loopback to interface that never use.
