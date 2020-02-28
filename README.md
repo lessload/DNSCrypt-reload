@@ -9,6 +9,7 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 3. one click restart to access internet with dnscrypt, script will automatic detect internet and run dnscrypt-proxy.
 
 (you can run script before or after connect internet but Web Captive Portal will not detect if you not run script after)
+
 (no need to stop service just restart to get internet connection)
 
 
