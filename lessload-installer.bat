@@ -2,6 +2,8 @@
 cd /d "%~dp0"
 xcopy .\win64 "C:\Program Files\dnscrypt-proxy-win64\" /h/i/c/k/e/r/y
 cd /d "C:\Program Files\dnscrypt-proxy-win64\"
+dnscrypt-proxy.exe -service stop
+dnscrypt-proxy.exe -service uninstall
 dnscrypt-proxy.exe -service install
 ::reg add not work with device that never use
 for /f "tokens=1" %%I in ('reg query "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces" /k /f "{" ^| find /i "{"') do (for /f "tokens=1" %%J in ('reg query "%%I" /v "DhcpIPAddress" ^| find /i "HKEY"') do (Reg add %%I /v "NameServer" /t REG_SZ /d "127.0.0.1" /f))
