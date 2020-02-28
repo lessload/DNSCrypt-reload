@@ -2,11 +2,14 @@
 
 cmd script automatic detect internet and start. one click base to run dnscrypt-proxy.
 
-1. run install script (it will install loopback to all interface by default & block all internet)
+1. download dnscrypt-proxy-winXX-x.x.x.zip (source: https://github.com/DNSCrypt/dnscrypt-proxy/releases/) and place winXX folder same as lessload-installer.bat
 
-2. one click restart to access internet with dnscrypt, script will automatic detect internet and run dnscrypt-proxy.
+2. run install script (it will install loopback to all interface by default & block all internet)
+
+3. one click restart to access internet with dnscrypt, script will automatic detect internet and run dnscrypt-proxy.
 
 (you can run script before or after connect internet but Web Captive Portal will not detect if you not run script after)
+(no need to stop service just restart to get internet connection)
 
 
 
