@@ -4,9 +4,7 @@ echo x > "%Temp%\dnscrypt-check.txt"
 
 ::StopService
 dnscrypt-proxy.exe -service stop
-for /f "tokens=1" %%I in ('reg query "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces" /k /f "{" ^| find /i "{"') do (for /f "tokens=1" %%J in ('reg query "%%I" /v "NameServer" ^| find /i "HKEY"') do (reg add %%I /v "NameServer" /t REG_SZ /d "" /f))
-for /f "tokens=1" %%I in ('reg query "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters\Interfaces" /k /f "{" ^| find /i "{"') do (for /f "tokens=1" %%J in ('reg query "%%I" /v "NameServer" ^| find /i "HKEY"') do (reg add %%I /v "NameServer" /t REG_SZ /d "" /f))
-for /F "tokens=3,*" %%A in ('netsh interface show interface^|find "Connected"') do (netsh int ipv4 set dns "%%B" dhcp && netsh int ipv6 set dns "%%B" dhcp)
+for /F "tokens=3,*" %%A in ('netsh interface show interface ^| find "Dedicated"') do (netsh int ipv4 set dns "%%B" dhcp && netsh int ipv6 set dns "%%B" dhcp)
 ipconfig /flushdns
 
 :OfflineTest
@@ -17,6 +15,8 @@ for /F "delims=:" %%I in (%Temp%\dnscrypt-check.txt) do (if /I "czd" == "%%I" (e
 :OnlineRun
 ::StartService
 dnscrypt-proxy.exe -service start
+::for temporary fix NCSI indicator in some case
+::timeout /t 15 /nobreak
 for /F "tokens=3,*" %%A in ('netsh interface show interface ^| find "Connected"') do (netsh int ipv4 set dns name="%%B" static 127.0.0.1 primary validate=no && netsh int ipv6 set dns name="%%B" static ::1 primary validate=no)
 ipconfig /flushdns
 ::pause
