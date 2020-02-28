@@ -26,9 +26,9 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 - Request PowerShell work on Windows 8 or above
 
 ## Bug
-- can not install loopback to interface that never use.
 - some anti-virus may block PowerShell to connect the internet. make it allow.
-- in some case dnscrypt-proxy can not download nscrypt-resolvers make it start service fail. ( please advice )
+- in case of Microsoft NCSI indicator not detect internet, dnscrypt-proxy will not download nscrypt-resolvers make it start service fail. 
+  ( dnscrypt-proxy trust in Microsoft NCSI make this script got problem, custom time out to temporary fix )
 
 ------------------------------------------
 ***Please advice me to make code more stable.***  - LESSLOAD
