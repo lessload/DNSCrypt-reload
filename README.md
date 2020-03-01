@@ -4,7 +4,7 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 
 1. download `dnscrypt-proxy-winXX-x.x.x.zip` ( [source](https://github.com/DNSCrypt/dnscrypt-proxy/releases/) ) and place `winXX` folder same directory as `lessload-installer.bat`
 
-2. run `lessload-installer.bat` {run as admin} to install (it will install loopback to all interface & block all internet by default)
+2. run `lessload-installer.bat` {run as admin} to install <br/>(it will install loopback to all interface & block all internet by default)
 
 3. one click `Reload-dnscrypt.bat` {run as admin} to access internet with dnscrypt, script will automatic detect internet and run dnscrypt-proxy.
 
@@ -15,7 +15,7 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 
 ## Pro
 - one click base to run dnscrypt-proxy by run `Reload-dnscrypt.bat` {run as admin}
-- always run dnscrypt-proxy, it may block connection when you use internet for first time or need Web Portal login. Just run `Reload-dnscrypt.bat` . Script will wait you login or done.
+- always run dnscrypt-proxy, it may block connection when you use internet for first time or need Web Portal login. <br/>Just run `Reload-dnscrypt.bat` . Script will wait you login or done connection.
 - support Web Captive Portal ('nslookup' & 'ping' not work like this script ).
 - less resource usage.
 - less data leak ( maybe `just 5s` )
