@@ -2,7 +2,7 @@
 
 cmd script automatic detect internet and start. one click base to run dnscrypt-proxy.
 
-1. download `dnscrypt-proxy-winXX-x.x.x.zip` ( [source](https://github.com/DNSCrypt/dnscrypt-proxy/releases/) ) and place `winXX` folder same as `lessload-installer.bat`
+1. download `dnscrypt-proxy-winXX-x.x.x.zip` ( [source](https://github.com/DNSCrypt/dnscrypt-proxy/releases/) ) and place `winXX` folder same directory as `lessload-installer.bat`
 
 2. run `lessload-installer.bat` {run as admin} to install (it will install loopback to all interface & block all internet by default)
 
