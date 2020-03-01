@@ -18,7 +18,7 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 - always run dnscrypt-proxy, it may block connection when you use internet for first time or need Web Portal login. <br/>Just run `Reload-dnscrypt.bat` . Script will wait you login or done connection.
 - support Web Captive Portal ('nslookup' & 'ping' not work like this script ).
 - less resource usage.
-- less data leak ( maybe `just 5s` )
+- less data leak ( `just 5s` maybe )
 - clean.
 
 ## Con
