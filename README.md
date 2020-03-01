@@ -29,7 +29,7 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 - in case of Microsoft NCSI indicator not detect internet, dnscrypt-proxy will not download dnscrypt-resolvers make it start service fail.
   `log: System DNS configuration not usable yet, exceptionally resolving [raw.githubusercontent.com] using fallback resolvers over tcp`<br/>
   ( dnscrypt-proxy use or trust in [Microsoft NCSI](https://answers.microsoft.com/en-us/windows/forum/windows_10-networking/network-connection-status-indicator-ncsi-showing/02664ddf-4eac-449a-8318-bdae1a5bad3d) make this script got problem, custom time out in script<br/>to temporary fix )<br/>
-  (use `lessload-installer.bat` to reduce NCSI poll period)
+  ( use `lessload-installer.bat` to reduce NCSI poll period )
 
 ------------------------------------------
 ***Please advice me to make code more stable.***  - LESSLOAD
