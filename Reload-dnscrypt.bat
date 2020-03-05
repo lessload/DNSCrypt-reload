@@ -8,8 +8,8 @@ for /F "tokens=3,*" %%A in ('netsh interface show interface ^| find "Dedicated"'
 ipconfig /flushdns
 
 :OfflineTest
-timeout /t 1 /nobreak
-powershell -Command "Invoke-WebRequest https://pastebin.com/raw/RH3GW47Q -OutFile '%Temp%\dnscrypt-check.txt' "
+echo Retest Connection
+powershell -Command "Invoke-WebRequest https://pastebin.com/raw/RH3GW47Q -OutFile '%Temp%\dnscrypt-check.txt' -TimeoutSec 1"
 for /F "delims=:" %%I in (%Temp%\dnscrypt-check.txt) do (if /I "czd" == "%%I" (echo x > "%Temp%\dnscrypt-check.txt" && GoTo OnlineRun) else (GoTo OfflineTest))
 
 :OnlineRun
