@@ -8,15 +8,14 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 
 3. one click `Reload-dnscrypt.bat` _[run as admin]_ to access internet with dnscrypt, script will automatic detect internet or wait for you to login through Web Portal and run dnscrypt-proxy.
 
-( recommend you to run script before connect wifi , Web Captive Portal will not show if you run script after )<br/>
+( recommend you to run script before connect wifi , Web Captive Portal will not show _in some case_ if you run script after )<br/>
 ( no need to stop service just restart to get internet connection back )
 
 
 
 ## Pro
+- support Web Captive Portal, Normally `dnscrypt-proxy` may break web portal in some case.
 - easy to re-run dnscrypt-proxy by run `Reload-dnscrypt.bat` _[run as admin]_
-- always run dnscrypt-proxy, it may block connection when you use internet for first time or when you need login through Web Portal. <br/>Just run `Reload-dnscrypt.bat` . Script will wait you login or done connection.
-- support Web Captive Portal ('nslookup' & 'ping' not work like this script ).
 - just script, no need more resource usage.
 - less data leak ( `just 5s` )
 - clean.
@@ -27,9 +26,9 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 
 ## Bug
 - some anti-virus may block PowerShell to connect the internet. make it allow.
-- in case of Microsoft NCSI indicator not detect internet, dnscrypt-proxy will not download dnscrypt-resolvers make it start service fail.
+- in case of Microsoft NCSI indicator not detect internet, `dnscrypt-proxy` will not download dnscrypt-resolvers make it start service fail.
   `log: System DNS configuration not usable yet, exceptionally resolving [raw.githubusercontent.com] using fallback resolvers over tcp`<br/>
-  ( dnscrypt-proxy use or trust in [Microsoft NCSI](https://answers.microsoft.com/en-us/windows/forum/windows_10-networking/network-connection-status-indicator-ncsi-showing/02664ddf-4eac-449a-8318-bdae1a5bad3d) make this script got problem, custom time out in script<br/>to temporary fix )<br/>
+  ( dnscrypt-proxy use or trust in [Microsoft NCSI](https://answers.microsoft.com/en-us/windows/forum/windows_10-networking/network-connection-status-indicator-ncsi-showing/02664ddf-4eac-449a-8318-bdae1a5bad3d) make it got problem, custom time out in script<br/>to temporary fix )<br/>
   ( use `lessload-installer.bat` to reduce NCSI poll period )
 
 ------------------------------------------
