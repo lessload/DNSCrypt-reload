@@ -6,7 +6,7 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 
 2. run `lessload-installer.bat` _[run as admin]_ to install <br/>(it will install loopback to all interface & block all internet by default)
 
-3. one click `Reload-dnscrypt.bat` _[run as admin]_ to access internet with dnscrypt, script will automatic detect internet or wait for you to login through Web Portal and run dnscrypt-proxy.
+3. one click `reload-dnscrypt.bat` _[run as admin]_ to access internet with dnscrypt, script will automatic detect internet or wait for you to login through Web Portal and run dnscrypt-proxy.
 
 ( recommend you to run script before connect wifi , Web Captive Portal will not show _in some case_ if you run script after )<br/>
 ( no need to stop service just restart to get internet connection back )
@@ -15,7 +15,7 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 
 ## Pro
 - support Web Captive Portal, Normally `dnscrypt-proxy` may break web portal in some case.
-- easy to re-run dnscrypt-proxy by run `Reload-dnscrypt.bat` _[run as admin]_
+- easy to re-run dnscrypt-proxy by run `reload-dnscrypt.bat` _[run as admin]_
 - just script, no need more resource usage.
 - less data leak ( `just 5s` )
 - clean.
