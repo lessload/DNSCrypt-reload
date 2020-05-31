@@ -39,7 +39,7 @@ This script will help you to fastly connect to your DNSCrypt as possible ans set
   
 ## Bug
 - some anti-virus may block PowerShell to connect the internet. make it allow.
-
+- disable DNS Client service `(dnscache)` in windows will break all internet of UWP apps, not recommend to do that.
 
 ------------------------------------------
 ***Please advice me to make code more stable.***  - LESSLOAD
