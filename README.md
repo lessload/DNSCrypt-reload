@@ -38,7 +38,7 @@ This script will help you to fastly connect to your DNSCrypt as possible and set
   _dnscrypt-proxy update method use or trust in [Microsoft NCSI](https://answers.microsoft.com/en-us/windows/forum/windows_10-networking/network-connection-status-indicator-ncsi-showing/02664ddf-4eac-449a-8318-bdae1a5bad3d) make it got problem_<br/>
 
   
-## Bug
+## Other problem
 - some anti-virus may block PowerShell to connect the internet. make it allow.
 - disable DNS Client service `(dnscache)` in windows will break all internet of UWP apps, not recommend to do that.
 
