@@ -34,7 +34,7 @@ This script will help you to fastly connect to your DNSCrypt as possible ans set
   ( _temporary fix_ it by custom timout between script, as in `re-dnscrypt.bat` )<br/>
   ( to _fix it without_ custom timeout, your need to static `sdns://` in `dnscrypt-proxy.toml` )<br/>
   ( use `lessload-installer.bat` to reduce NCSI poll period before run `re-dnscrypt.bat` )<br/>
-  _dnscrypt-proxy update method use or trust in [Microsoft NCSI](https://answers.microsoft.com/en-us/windows/forum/windows_10-networking/network-connection-status-indicator-ncsi-showing/02664ddf-4eac-449a-8318-bdae1a5bad3d) make it got problem )_<br/>
+  _dnscrypt-proxy update method use or trust in [Microsoft NCSI](https://answers.microsoft.com/en-us/windows/forum/windows_10-networking/network-connection-status-indicator-ncsi-showing/02664ddf-4eac-449a-8318-bdae1a5bad3d) make it got problem _<br/>
   _All explain about this issue is [here](https://github.com/DNSCrypt/dnscrypt-proxy/issues/1345)_
   
 ## Bug
