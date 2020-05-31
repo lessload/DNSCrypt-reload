@@ -27,7 +27,7 @@ cmd script automatic detect internet and start. one click base to run dnscrypt-p
 - Request PowerShell, work on Windows 8 or above
 
 ## _NCSI problem with dnscrypt-proxy_
-if you do not use your device too long, and `*.md` was outdate and 127.0.0.1 is still DNS of windows.
+If you do not use your device too long, and `*.md` was outdate and 127.0.0.1 is still DNS of windows.
 `dnscrypt-proxy` will fail to update and stop themself. That why i make this script.
 This script will help you to fastly connect to your DNSCrypt as possible ans set loopback, to prevent some DNS traffic leak.
 
