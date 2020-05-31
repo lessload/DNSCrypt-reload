@@ -1,3 +1,4 @@
+:: LESSLOAD-DNSCrypt v1.0
 @echo off
 cd /d "C:\Program Files\dnscrypt-proxy-win64\"
 echo x > "%Temp%\dnscrypt-check.txt"
@@ -16,7 +17,7 @@ for /F "delims=:" %%I in (%Temp%\dnscrypt-check.txt) do (if /I "czd" == "%%I" (e
 :OnlineRun
 ::StartService
 dnscrypt-proxy.exe -service start
-::temporary fix NCSI error
+::you can remove timeout if you use static sdns://
 timeout /t 5 /nobreak
 for /F "tokens=3,*" %%A in ('netsh interface show interface ^| find "Connected"') do (netsh int ipv4 set dns name="%%B" static 127.0.0.1 primary validate=no && netsh int ipv6 set dns name="%%B" static ::1 primary validate=no)
 ipconfig /flushdns
