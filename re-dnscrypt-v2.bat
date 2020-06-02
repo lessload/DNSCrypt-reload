@@ -1,4 +1,4 @@
-:: LESSLOAD-DNSCrypt v2.0
+:: LESSLOAD-DNSCrypt v2.0 beta
 @echo off
 cd /d "C:\Program Files\dnscrypt-proxy-win64\"
 echo x > "%Temp%\dnscrypt-check.txt"
