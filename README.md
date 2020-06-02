@@ -1,4 +1,4 @@
-# LESSLOAD-DNSCrypt
+# DNSCrypt installer & reloader
 
 cmd script automatic detect internet and start. one click base to re-run dnscrypt-proxy.
 
