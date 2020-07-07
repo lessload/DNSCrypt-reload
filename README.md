@@ -39,6 +39,9 @@ This script will help you to fastly connect to your DNSCrypt as possible and set
 
 _Why NCSI is so importance. Because if your pc got NCSI alert it will break many function in windows <br/>example -UWP-internet -Hotspot_
 
+## _Cool NCSI solution_
+- https://github.com/dantmnf/NCSIOverride <br/>( not test it yet, one day Microsoft will prevent this thing to work because of security or telemetry reason. maybe )
+
 ## Other problem
 - some anti-virus may block PowerShell to connect the internet. make it allow.
 - disable DNS Client service `(dnscache)` in windows will break internet connection of UWP apps, not recommend to do that.
