@@ -26,6 +26,11 @@ cmd script automatic detect internet and start. one click base to re-run dnscryp
 - you need to config *.toml manual. ( [From this manual](https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Configuration) )
 - Request PowerShell, work on Windows 8 or above
 
+## Other problem
+- some anti-virus may block PowerShell to connect the internet. make it allow.
+- disable DNS Client service `(dnscache)` in windows will break internet connection of UWP apps, not recommend to do that.
+- Public wifi got NCSI problem on Windows 10 v2004 or above. [for now. fix by set `reg add "HKLM\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet" /v "EnableActiveProbing" /t REG_DWORD /d "1" /f` , need better way to fix this issue]
+
 ## _DNS restrict + NCSI problem_
 _In case of public wifi that restrict DNS_<br/>
 If you do not use your device too long, and `*.md` was outdate and 127.0.0.1 is still DNS of windows.
@@ -42,10 +47,9 @@ _Why NCSI is so importance. Because if your pc got NCSI alert it will break many
 ## _Cool NCSI solution_
 - https://github.com/dantmnf/NCSIOverride <br/>( not test it yet, one day Microsoft will prevent this thing to work because of security or telemetry reason. maybe )
 
-## Other problem
-- some anti-virus may block PowerShell to connect the internet. make it allow.
-- disable DNS Client service `(dnscache)` in windows will break internet connection of UWP apps, not recommend to do that.
-- Public wifi got NCSI problem on Windows 10 v2004 or above. [for now. fix by set `reg add "HKLM\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet" /v "EnableActiveProbing" /t REG_DWORD /d "1" /f` , need better way to fix this issue]
+## My network test condition
+- restrict dns by router for make it seem like some public wifi ( `dnscrypt-proxy` pain point.! )
+- block all Microsoft server (host & IP) for make it seem like company network, and test how NCSI really works.
 
-------------------------------------------
+-----------------------------------------
 ***Please advice me to make code more stable.***  - LESSLOAD
