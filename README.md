@@ -2,7 +2,7 @@
 
 cmd script automatic detect internet and start. one click base to re-run dnscrypt-proxy.
 
-1. download `dnscrypt-proxy-winXX-x.x.x.zip` ( [source](https://github.com/DNSCrypt/dnscrypt-proxy/releases/) ) and place `winXX` folder same directory as `lessload-installer.bat`
+1. download `dnscrypt-proxy-win64-x.x.x.zip` ( [source](https://github.com/DNSCrypt/dnscrypt-proxy/releases/) ) and place `win64` folder same directory as `lessload-installer.bat`<br/> (Modify needed in Windows 32bit)
 
 2. run `lessload-installer.bat` _[run as admin]_ to install <br/>(it will install loopback to all interface & block all internet by default)
 
@@ -16,7 +16,7 @@ cmd script automatic detect internet and start. one click base to re-run dnscryp
 
 
 ## Pro
-- support Web Captive Portal, Normally `dnscrypt-proxy` may break web portal in some case.
+- support Web Captive Portal, Normally `dnscrypt-proxy` may break web portal in many case.
 - easy to re-run dnscrypt-proxy by run `re-dnscrypt.bat` _[run as admin]_
 - just script, no need more resource usage.
 - less DNS traffic leak ( `just 5s` `nearly 0 if you use static sdns://` )
@@ -26,7 +26,7 @@ cmd script automatic detect internet and start. one click base to re-run dnscryp
 - you need to config *.toml manual. ( [From this manual](https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Configuration) )
 - Request PowerShell, work on Windows 8 or above
 
-## _DNS restrict+NCSI problem_
+## _DNS restrict + NCSI problem_
 _In case of public wifi that restrict DNS_<br/>
 If you do not use your device too long, and `*.md` was outdate and 127.0.0.1 is still DNS of windows.
 `dnscrypt-proxy` will fail to update and stop themself. That why i make this script.
@@ -37,10 +37,12 @@ This script will help you to fastly connect to your DNSCrypt as possible and set
   ( use `lessload-installer.bat` to reduce NCSI poll period before run `re-dnscrypt.bat` )<br/>
   _dnscrypt-proxy update method use or trust in [Microsoft NCSI](https://answers.microsoft.com/en-us/windows/forum/windows_10-networking/network-connection-status-indicator-ncsi-showing/02664ddf-4eac-449a-8318-bdae1a5bad3d) make it got problem_<br/>
 
-  
+_Why NCSI is so importance. Because if your pc got NCSI alert it will break many function in windows .example -UWP internet -Hotspot_
+
 ## Other problem
 - some anti-virus may block PowerShell to connect the internet. make it allow.
-- disable DNS Client service `(dnscache)` in windows will break all internet of UWP apps, not recommend to do that.
+- disable DNS Client service `(dnscache)` in windows will break internet connection of UWP apps, not recommend to do that.
+- Public wifi got NCSI problem on Windows 10 v2004 or above. [for now. fix by set `reg add "HKLM\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet" /v "EnableActiveProbing" /t REG_DWORD /d "1" /f` , need better way to fix this issue]
 
 ------------------------------------------
 ***Please advice me to make code more stable.***  - LESSLOAD
