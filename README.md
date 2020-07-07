@@ -37,7 +37,7 @@ This script will help you to fastly connect to your DNSCrypt as possible and set
   ( use `lessload-installer.bat` to reduce NCSI poll period before run `re-dnscrypt.bat` )<br/>
   _dnscrypt-proxy update method use or trust in [Microsoft NCSI](https://answers.microsoft.com/en-us/windows/forum/windows_10-networking/network-connection-status-indicator-ncsi-showing/02664ddf-4eac-449a-8318-bdae1a5bad3d) make it got problem_<br/>
 
-_Why NCSI is so importance. Because if your pc got NCSI alert it will break many function in windows .example -UWP internet -Hotspot_
+_Why NCSI is so importance. Because if your pc got NCSI alert it will break many function in windows <br/>example -UWP-internet -Hotspot_
 
 ## Other problem
 - some anti-virus may block PowerShell to connect the internet. make it allow.
