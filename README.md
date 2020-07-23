@@ -31,6 +31,12 @@ cmd script automatic detect internet and start. one click base to re-run dnscryp
 - disable DNS Client service `(dnscache)` in windows will break internet connection of UWP apps, not recommend to do that.
 - Public wifi got NCSI problem on Windows 10 v2004 or above. [for now. fix by set `reg add "HKLM\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet" /v "EnableActiveProbing" /t REG_DWORD /d "1" /f` , need better way to fix this issue]
 
+## v2 note
+- change script to download resolver before start `dnscrypt-proxy` to prevent `dnscrypt-proxy` stop it self when resolver was outdated
+- change `powershell` to `curl` to download resolver. this improve speed and reduce cpu impact<br/>
+  ( on Intel Atom `Invoke-WebRequest` make cpu ran at 100% speed, for `curl` run only 70% )<br/>
+  ( in old Windows OS, you may need to install curl itself [link here](https://curl.haxx.se/windows/)
+  
 ## _DNS restrict + NCSI problem_
 _In case of public wifi that restrict DNS_<br/>
 If you do not use your device too long, and `*.md` was outdate and 127.0.0.1 is still DNS of windows.
