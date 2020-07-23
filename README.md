@@ -35,7 +35,7 @@ cmd script automatic detect internet and start. one click base to re-run dnscryp
 - change script to download resolver before start `dnscrypt-proxy` to prevent `dnscrypt-proxy` stop it self when resolver was outdated
 - change `powershell` to `curl` to download resolver. this improve speed and reduce cpu impact<br/>
   ( on Intel Atom `Invoke-WebRequest` make cpu ran at 100% speed, for `curl` run only 70% )<br/>
-  ( in old Windows OS, you may need to install curl itself [link here](https://curl.haxx.se/windows/)
+  ( in old Windows OS, you may need to install curl itself [official link here](https://curl.haxx.se/windows/) )
   
 ## _DNS restrict + NCSI problem_
 _In case of public wifi that restrict DNS_<br/>
