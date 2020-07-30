@@ -24,7 +24,7 @@ cmd script automatic detect internet and start. one click base to re-run dnscryp
 
 ## Con
 - you need to config *.toml manual. ( [From this manual](https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Configuration) )
-- Request PowerShell, work on Windows 8 or above
+- Request PowerShell or Curl, work on Windows 8 or above
 
 ## Other problem
 - some anti-virus may block PowerShell to connect the internet. make it allow.
