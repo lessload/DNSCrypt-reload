@@ -13,8 +13,9 @@ cmd script automatic detect internet and start. one click base to re-run dnscryp
 ( recommend you to run script before connect wifi , Web Captive Portal will not show _in some case_ if you run script after connect wifi )<br/>
 ( no need to stop service just restart to get internet connection back )
 
-** Windows 10 v2004 or above, you need to enable NCSI Active Probing, detail in [Other problem](https://github.com/lessload/LESSLOAD-DNSCrypt#other-problem)
-
+** Windows 10 v2004 or above **
+- you need to enable NCSI Active Probing, detail in [Other problem](https://github.com/lessload/LESSLOAD-DNSCrypt#other-problem)
+- modify NCSI server got NCSI problem in some case.
 ## Pro
 - support Web Captive Portal, Normally `dnscrypt-proxy` may break web portal in many case.
 - easy to re-run dnscrypt-proxy by run `re-dnscrypt.bat` _[run as admin]_
@@ -24,7 +25,7 @@ cmd script automatic detect internet and start. one click base to re-run dnscryp
 
 ## Con
 - you need to config *.toml manual. ( [From this manual](https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Configuration) )
-- Request PowerShell or Curl, work on Windows 8 or above
+- Request PowerShell or Curl, work on Windows 8 or above.
 
 ## Other problem
 - some anti-virus may block PowerShell to connect the internet. make it allow.
@@ -32,7 +33,7 @@ cmd script automatic detect internet and start. one click base to re-run dnscryp
 - Public wifi got NCSI problem on Windows 10 v2004 or above. [for now. fix by run this in cmd `reg add "HKLM\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet" /v "EnableActiveProbing" /t REG_DWORD /d "1" /f` , need better way to fix this issue]
 
 ## v2 note
-- change script to download resolver before start `dnscrypt-proxy` to prevent `dnscrypt-proxy` stop it self when resolver was outdated
+- change script to download resolver before start `dnscrypt-proxy` to prevent `dnscrypt-proxy` stop it self when resolver was outdated.
 - change `powershell` to `curl` to download resolver. this improve speed and reduce cpu impact<br/>
   ( on Intel Atom `Invoke-WebRequest` make cpu ran at 100% speed, for `curl` run only 70% )<br/>
   ( in old Windows OS, you may need to install curl itself [official link here](https://curl.haxx.se/windows/) )
