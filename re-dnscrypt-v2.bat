@@ -13,14 +13,15 @@ ipconfig /flushdns
 ::timeout /t 1
 cls
 echo [-Retest Connection-]
-curl https://pastebin.com/raw/RH3GW47Q -o %Temp%\dnscrypt-check.txt
+::Pastebin.com access denine sometime, please change to your host
+curl --silent --connect-timeout 1 https://pastebin.com/raw/RH3GW47Q -o %Temp%\dnscrypt-check.txt
 for /F "delims=:" %%I in (%Temp%\dnscrypt-check.txt) do (if [%%I]==[czd] (GoTo RunService) else (GoTo OnlineTest))
 
 :RunService
 ::StartService
 ::Don't forget edit script to your file location
-start cmd /c "curl --silent --ipv4 https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/public-resolvers.md.minisig -o C:\Program Files\dnscrypt-proxy-win64\public-resolvers.md.minisig & curl --silent --ipv4 https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/relays.md -o C:\Program Files\dnscrypt-proxy-win64\relays.md & curl --silent --ipv4 https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/relays.md.minisig -o C:\Program Files\dnscrypt-proxy-win64\relays.md.minisig"
-curl --silent --ipv4 https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/public-resolvers.md -o C:\Program Files\dnscrypt-proxy-win64\public-resolvers.md
+start cmd /c "curl --silent https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/public-resolvers.md.minisig -o C:\Program Files\dnscrypt-proxy-win64\public-resolvers.md.minisig & curl --silent https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/relays.md -o C:\Program Files\dnscrypt-proxy-win64\relays.md & curl --silent https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/relays.md.minisig -o C:\Program Files\dnscrypt-proxy-win64\relays.md.minisig"
+curl --silent https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/public-resolvers.md -o C:\Program Files\dnscrypt-proxy-win64\public-resolvers.md
 dnscrypt-proxy.exe -service start
 for /F "tokens=3,*" %%A in ('netsh interface show interface ^| find "Connected" ^| find /i /v "Local Area"') do (netsh int ipv4 set dns name="%%B" static 127.0.0.1 primary validate=no && netsh int ipv6 set dns name="%%B" static ::1 primary validate=no)
 ipconfig /flushdns
