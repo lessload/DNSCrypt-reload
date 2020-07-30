@@ -13,7 +13,7 @@ cmd script automatic detect internet and start. one click base to re-run dnscryp
 ( recommend you to run script before connect wifi , Web Captive Portal will not show _in some case_ if you run script after connect wifi )<br/>
 ( no need to stop service just restart to get internet connection back )
 
-
+** Windows 10 v2004 or above, you need to enable NCSI Active Probing, detail in [Other problem](https://github.com/lessload/LESSLOAD-DNSCrypt#other-problem)
 
 ## Pro
 - support Web Captive Portal, Normally `dnscrypt-proxy` may break web portal in many case.
