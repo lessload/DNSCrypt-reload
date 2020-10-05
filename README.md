@@ -59,4 +59,4 @@ _Why NCSI is so importance. Because if your pc got NCSI alert it will break many
 - block all Microsoft server (host & IP) for make it seem like company network, and test how NCSI really works.
 
 -----------------------------------------
-***Please advice me to make code more stable.***  - LESSLOAD
+***Please advise me if you have better code.***  - LESSLOAD
