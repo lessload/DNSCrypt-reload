@@ -30,7 +30,9 @@ cmd script automatic detect internet and start. one click base to re-run dnscryp
 ## Other problem
 - some anti-virus may block PowerShell to connect the internet. make it allow.
 - disable DNS Client service `(dnscache)` in windows will break internet connection of UWP apps, not recommend to do that.
-- Public wifi got NCSI problem on Windows 10 v2004 or above. [for now. fix by run this in cmd `reg add "HKLM\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet" /v "EnableActiveProbing" /t REG_DWORD /d "1" /f` , need better way to fix this issue]
+- Public wifi got NCSI problem on Windows 10 v2004 or above. [for now. fix by run this in cmd <br/>
+`reg add "HKLM\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet" /v "EnableActiveProbing" /t REG_DWORD /d "1" /f`
+<br/>, need better way to fix this issue]
 
 ## v2 note
 - change script to download resolver before start `dnscrypt-proxy` to prevent `dnscrypt-proxy` stop it self when resolver was outdated.
