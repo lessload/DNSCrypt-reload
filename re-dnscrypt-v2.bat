@@ -1,16 +1,16 @@
-:: LESSLOAD-DNSCrypt v2.2 beta
+:: LESSLOAD-DNSCrypt v2.3 beta
 @echo off
 cd /d "C:\Program Files\dnscrypt-proxy-win64\"
 echo x > "%Temp%\dnscrypt-check.txt"
 
 ::StopService
 dnscrypt-proxy.exe -service stop
-for /F "tokens=3,*" %%A in ('netsh interface show interface ^| find "Dedicated" ^| find /i /v "Local Area"') do (netsh int ipv4 set dns "%%B" dhcp && netsh int ipv6 set dns "%%B" dhcp)
+for /F "tokens=3,*" %%A in ('netsh interface show interface ^| find "Dedicated"') do (netsh int ipv4 set dns "%%B" dhcp && netsh int ipv6 set dns "%%B" dhcp)
 ipconfig /flushdns
 
 :OnlineTest
-::use timeout reduce cpu usage from 70 to 30% on Intel Atom.
-::timeout /t 1
+::use timeout can reduce cpu usage from 70 to 30% on Intel Atom.
+timeout /t 1 > nul
 cls
 echo [-Retest Connection-]
 ::Pastebin.com access denine sometime, please change to your host
