@@ -79,6 +79,8 @@ It may not be able to login sometimes, reason below.
 
 ---
 
+<br/>
+
 ## _dnscrypt-proxy_ Pain Point.!
 - their `netprob` not work correctly on many public wifi that use web portal login. you can prob any IP but not real respond that IP.
 - `dnscrypt-proxy` stop it self when resolver was outdated, and doesn't have the secure way to update itself. make dns traffic leak when restart it.
@@ -86,6 +88,7 @@ It may not be able to login sometimes, reason below.
 - Some developer of `dnscrypt-proxy` really narrow-minded, they fast close issue ticket but the problem still persists. Seem like they don't want other people to comment.
 
 ---
+<br/>
 
 ## My network test condition
 - restrict dns by router for make it seem like some public wifi ( `dnscrypt-proxy` pain point.! )
