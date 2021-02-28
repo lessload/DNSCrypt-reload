@@ -84,7 +84,7 @@ It may not be able to login sometimes, reason below.
 ## _dnscrypt-proxy_ Pain Point.!
 - their `netprob` not work correctly on many public wifi that use web portal login. you can prob any IP but not real respond that IP.
 - `dnscrypt-proxy` stop it self when resolver was outdated, and doesn't have the secure way to update itself. make dns traffic leak when restart it.
-- Cloaking rule doesn't make domain have multiple IP, it just randomly select one IP of that domain per one query.
+- (v2.0.45 problem was gone) Cloaking rule doesn't make domain have multiple IP.
 - Some developer of `dnscrypt-proxy` really narrow-minded, they fast close issue ticket but the problem still persists. Seem like they don't want other people to comment.
 
 ---
