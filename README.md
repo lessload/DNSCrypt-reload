@@ -82,16 +82,17 @@ It may not be able to login sometimes, reason below.
 <br/>
 
 ## _dnscrypt-proxy_ Pain Point.!
-- their `netprob` not work correctly on many public wifi that use web portal login. you can prob any IP but not real respond that IP.
+- their `netprob` not work correctly on many public wifi that use web portal login. you can prob any IP but not real respond from that IP.
 - `dnscrypt-proxy` stop it self when resolver was outdated, and doesn't have the secure way to update itself. make dns traffic leak when restart it.
 - (v2.0.45 problem was gone) Cloaking rule doesn't make domain have multiple IP.
-- Some developer of `dnscrypt-proxy` really narrow-minded, they fast close issue ticket but the problem still persists. Seem like they don't want other people to comment.
+- Cloak rule was overwrite by Block rule. This so weird. Why people need block their own cloak rule.! User may use large set of block list and it's will block their cloak rule someday.
+- `*.hostname` was equal to `hostname` second weird thing from Dev.!
 
 ---
 <br/>
 
 ## My network test condition
-- restrict dns by router for make it seem like some public wifi ( `dnscrypt-proxy` pain point.! )
+- restrict dns by router for make it seem like some public wifi
 - block all Microsoft server (host & IP) for make it seem like company network, and test how NCSI really works.
 
 ## _Cool NCSI solution_
