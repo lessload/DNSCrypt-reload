@@ -86,7 +86,7 @@ It may not be able to login sometimes, reason below.
 - `dnscrypt-proxy` stop it self when resolver was outdated, and doesn't have the secure way to update itself. make dns traffic leak when restart it.
 - (v2.0.45 problem was gone) Cloaking rule doesn't make domain have multiple IP.
 - Cloak rule was overwrite by Block rule. This so weird. Why people need block their own cloak rule.! User may use large set of block list and it's will block their cloak rule someday.
-- `*.hostname` was equal to `hostname` second weird thing from Dev.!
+- `*.hostname` was equal to `hostname` but `*ads.*` not equal to `ads.*`. Is it logical?
 
 ---
 <br/>
