@@ -1,3 +1,45 @@
+
+## USE _dnscrypt-proxy_ with A captive portal (from public wifi) without reload
+You can use it without reload by doing this.
+1. add fake url-ip in cloak rule, used for redirect to captive portal. ( real url make browser cache them and not redirect )<br/>
+add something like this in cloak rule.
+```
+=fakeportal.com 34.107.221.82
+```
+and go to fakeportal.com for detect and redirect to captive portal page.
+some portal will fail because they not use private ip. You need to continue with step 2.<br/>
+
+2. add captive portal url and their real IP in `cloaking-rules.txt`.<br/>
+add something look like this.
+```
+=portal.web-login.com 10.10.0.1
+=portal-content.web-login.com 10.10.0.2
+```
+You can obtain ip by nslookup, something like
+```
+> nslookup portal.web-login.com 10.10.0.10
+Server:  UnKnown
+Address:  10.10.0.10
+
+Non-authoritative answer:
+Name:    portal.web-login.com
+Addresses:  10.10.0.1
+            10.10.0.2
+```
+where `portal.web-login.com` is a login page. and `10.10.0.10` is a dns ip.
+- why cloak it not forward it? because forward rule not work when you set `force_tcp = true`
+
+## _dnscrypt-proxy_ Pain Point.!
+- their `netprob` not work correctly on many public wifi that use web portal login. you can ping any IP but not real respond from that IP.
+- `dnscrypt-proxy` stop it self when resolver was outdated, and doesn't have the secure way to update itself. make dns traffic leak when restart it.
+- _(v2.0.45 problem solved)_ Cloaking rule doesn't make domain have multiple IP.
+- Cloak rule was overwrite by Block rule. This so weird. Why people need block their own cloak rule.! User may use large set of block list and it's will block their cloak rule someday.
+- `*.hostname` was equal to `hostname` but `*ads.*` not equal to `ads.*`. Is it logical? Multiple logic in one program.
+- When you set `force_tcp = true` normal dns from forward rule will go out with TCP port 53. That not work with many public wifi dns. (8.8.8.8 work fine)
+- Firefox randomly fails to resolve AAAA when use dnscrypt-proxy (problem may from Firefox). but dev fastly close the issue for $@#%@$@
+
+<br/>
+
 # DNSCrypt installer & reloader
 
 cmd script automatic detect internet and start. one click base to re-run dnscrypt-proxy.
@@ -56,39 +98,7 @@ This script will help you to fastly connect to your DNSCrypt as possible and set
 
 _Why NCSI is so importance. Because if your pc got NCSI alert it will break many function in windows <br/>example -UWP-internet -Hotspot_
 
-## USE _dnscrypt-proxy_ without reload
-You can use it without reload, but you need to custom cloak rule for the web portal login to their real IP.<br/>
-in `cloaking-rules.txt` something like
-```
-portal.web-login.com 10.10.0.1
-portal.web-login.com 10.10.0.2
-```
-You can obtain ip by nslookup, something like
-```
-> nslookup portal.web-login.com 10.10.0.10
-Server:  UnKnown
-Address:  10.10.0.10
-
-Non-authoritative answer:
-Name:    portal.web-login.com
-Addresses:  10.10.0.1
-            10.10.0.2
-```
-where `portal.web-login.com` is a login page. and `10.10.0.10` is a dns ip.
-It may not be able to login sometimes, reason below.
-
----
-
-<br/>
-
-## _dnscrypt-proxy_ Pain Point.!
-- their `netprob` not work correctly on many public wifi that use web portal login. you can prob any IP but not real respond from that IP.
-- `dnscrypt-proxy` stop it self when resolver was outdated, and doesn't have the secure way to update itself. make dns traffic leak when restart it.
-- (v2.0.45 problem was gone) Cloaking rule doesn't make domain have multiple IP.
-- Cloak rule was overwrite by Block rule. This so weird. Why people need block their own cloak rule.! User may use large set of block list and it's will block their cloak rule someday.
-- `*.hostname` was equal to `hostname` but `*ads.*` not equal to `ads.*`. Is it logical?
-
----
+--
 <br/>
 
 ## My network test condition
