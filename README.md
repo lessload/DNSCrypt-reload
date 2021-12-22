@@ -33,7 +33,7 @@ where `portal.web-login.com` is a login page. and `10.10.0.10` is a dns ip.
 - their `netprob` not work correctly on many public wifi that use web portal login. you can ping any IP but not real respond from that IP.
 - `dnscrypt-proxy` stop it self when resolver was outdated, and doesn't have the secure way to update itself. make dns traffic leak when restart it.
 - _(v2.0.45 problem solved)_ Cloaking rule doesn't make domain have multiple IP.
-- Cloak rule was overwrite by Block rule. This so weird. Why people need block their own cloak rule.! User may use large set of block list and it's will block their cloak rule someday.
+- Cloak rule was overwrite by Block rule. This so weird. Why people need block their own cloak rule.! User may use large set of block list and it's will block their cloak rule someday. (add blocked url to allow rule to make it work)
 - `*.hostname` was equal to `hostname` but `*ads.*` not equal to `ads.*`. Is it logical? Multiple logic in one program.
 - When you set `force_tcp = true` normal dns from forward rule will go out with TCP port 53. That not work with many public wifi dns. (8.8.8.8 work fine)
 - Firefox randomly fails to resolve AAAA when use dnscrypt-proxy (problem may from Firefox). but dev fastly close the issue for $@#%@$@
